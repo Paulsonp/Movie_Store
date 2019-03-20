@@ -1,0 +1,33 @@
+<ActionBar class="action-bar" backgroundColor="#db3e3e">
+  <GridLayout class="m-r-10" columns="*,30" rows="30" horizontalAlignment="right">
+    <Label row="0" col="0" fontSize="18" class="p-t-5 def-color" text="TOP RATED MOVIES"></Label>
+    <Label fontSize="30" row="0" col="1" class="fa def-color" [nsRouterLink]="['/home']" text="&#xf015;"></Label>
+  </GridLayout>
+</ActionBar>
+<ScrollView>
+  <StackLayout>
+    <FlexboxLayout flexWrap="wrap" justifyContent="space-between" class="m-10">
+      <CardView radius="5" elevation="10" width="46%" class="m-5" *ngFor="let item of items">
+        <StackLayout horizontalAlignment="center">
+          <Image
+            width="100%"
+            stretch="aspectFill"
+            class="card-img"
+            (tap)="showItem(item.id)"
+            [src]="'http://image.tmdb.org/t/p/w185/' + item.poster_path"
+          ></Image>
+          <Label class="h3 p-l-5 p-r-5 text-center title-color" textWrap="true" [text]="item.title"></Label>
+        </StackLayout>
+      </CardView>
+    </FlexboxLayout>
+  </StackLayout>
+</ScrollView>
+
+<ActivityIndicator
+  horizontalAlignment="center"
+  verticalAlignment="center"
+  [busy]="processing"
+  class="activity-indicator"
+  color="#db3e3e"
+>
+</ActivityIndicator>

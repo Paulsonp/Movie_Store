@@ -1,0 +1,146 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+The imported CSS rules must precede all other types of rules.
+*/
+@import '~nativescript-theme-core/css/core.light.css';
+.fa {
+  font-family: 'FontAwesome';
+}
+
+.status-img {
+  margin-top: 4;
+  margin-right: 20;
+  width: 30;
+  height: 30;
+}
+.status-profile {
+  border-width: 1;
+  border-color: #ffffff;
+  background-color: #f1ebeb;
+  border-radius: 50%;
+  margin-top: 4;
+  margin-right: 15;
+  width: 30;
+  height: 30;
+}
+.status-title {
+  color: white;
+  font-size: 18;
+  margin-left: 15;
+  margin-top: 8;
+  horizontal-align: left;
+  vertical-align: center;
+}
+
+.item-category {
+  font-size: 14;
+  color: #828282;
+}
+
+.rating-icon {
+  padding-top: 3;
+  color: #ffe900;
+  font-size: 14;
+  margin-left: 10;
+}
+
+.rating-value {
+  margin-left: 5;
+}
+
+.liked-active {
+  color: #4080ff;
+}
+
+.heart-active {
+  color: #b51213;
+}
+
+.default {
+  color: #828282;
+}
+
+.layout {
+  vertical-align: bottom;
+  color: #828282;
+  font-size: 14;
+  height: 30;
+  padding: 5 0 5 0;
+}
+
+.like-icon {
+  vertical-align: bottom;
+  height: 30;
+  font-size: 16;
+  margin-right: 2;
+  padding: 5 5 5 5;
+}
+
+.item-category {
+  font-size: 14;
+  color: #828282;
+}
+
+.category-icon {
+  text-align: center;
+  padding-top: 5;
+  color: white;
+  border-color: white;
+  vertical-align: center;
+  font-size: 25;
+  border-width: 1;
+  border-radius: 50%;
+  margin-top: 4;
+  margin-right: 15;
+  width: 40;
+  height: 40;
+}
+
+.content {
+  margin-left: 16;
+  margin-right: 16;
+  margin-bottom: 3;
+}
+
+.card-img {
+  width: 100%;
+  height: 150;
+}
+
+.line {
+  height: 0.5;
+  border: none;
+  color: #e0e0e0;
+  background-color: #e0e0e0;
+}
+
+.lineBreak {
+  height: 7;
+  border: none;
+  color: #e0e0e0;
+  background-color: #e0e0e0;
+}
+
+.default-img {
+  color: #d1cece5b;
+}
+
+.category-name {
+  color: #f7f7f7;
+  font-size: 14;
+  font-weight: bold;
+  horizontal-align: center;
+  vertical-align: center;
+  margin: 5 0 15 0;
+}
+.title-color {
+  color: #443f3f;
+}

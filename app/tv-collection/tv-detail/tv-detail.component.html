@@ -1,0 +1,139 @@
+<StackLayout verticalAlignment="top">
+  <GridLayout class="anim-cover" rows="auto" columns="*">
+    <YoutubePlayer
+      row="0"
+      col="0"
+      id="player"
+      apiKey="AIzaSyDYys0oB55CxYhIt-BRhgTmAXyWyNXlMNU"
+      [src]="videos?.key"
+      height="200"
+      width="100%"
+      backgroundColor="gray"
+      isFullScreen="true"
+    ></YoutubePlayer>
+    <Label
+      row="0"
+      col="0"
+      verticalAlignment="top"
+      horizontalAlignment="left"
+      (tap)="goBack()"
+      fontSize="24"
+      text="&#xf060;"
+      class="fa back-icon"
+    >
+    </Label>
+  </GridLayout>
+
+  <GridLayout rows="auto,auto,auto,auto" columns="auto" class="content">
+    <GridLayout
+      class="anim-itemInfo"
+      row="1"
+      width="100%"
+      columns="auto,*"
+      rows="auto,auto,auto,auto"
+      verticalAlignment="center"
+    >
+      <Image
+        borderRadius="5"
+        row="0"
+        col="0"
+        rowSpan="4"
+        height="60"
+        width="60"
+        stretch="aspectFill"
+        class="card-img"
+        [src]="'http://image.tmdb.org/t/p/w185/' + item?.backdrop_path"
+      ></Image>
+      <Label
+        row="0"
+        col="1"
+        class="item-name p-l-5"
+        textwrap="true"
+        verticalAlignment="bottom"
+        horizontalAlignment="left"
+        [text]="item?.name"
+      ></Label>
+
+      <Label
+        row="1"
+        col="1"
+        class="item-title  p-l-5"
+        textwrap="true"
+        verticalAlignment="top"
+        horizontalAlignment="left"
+        [text]="item.name"
+      ></Label>
+      <Label row="2" col="1" class="item-title  p-l-5" [text]="'Average Rate:' + item.vote_average"></Label>
+    </GridLayout>
+    <StackLayout class="line anim-likes" row="2" width="100%" marginTop="10"> </StackLayout>
+    <GridLayout
+      *ngIf="item"
+      columns="auto,*,auto,auto"
+      rows="auto"
+      marginTop="5"
+      width="100%"
+      row="3"
+      class="anim-likes"
+    >
+      <GridLayout col="0" rows="auto" columns="auto,auto">
+        <Label col="0" row="0" class="fa video-icon" text="&#xf03d;"></Label>
+        <Label col="1" row="0" class="layout" text="More Videos"></Label>
+      </GridLayout>
+      <StackLayout col="1" orientation="horizontal" marginLeft="15"> </StackLayout>
+      <GridLayout col="2" rows="auto" columns="auto,auto" (tap)="toggleHeart(item)" marginRight="15">
+        <Label
+          col="0"
+          row="0"
+          #favorite
+          [class]="item.isFavorite ? 'like-icon fa heart-active' : 'like-icon fa default'"
+          [text]="item.isFavorite ? '&#xf004;' : '&#xf08a;'"
+        ></Label>
+        <Label col="1" row="0" class="layout" text="Favorite"></Label>
+      </GridLayout>
+      <StackLayout col="3" orientation="horizontal">
+        <Label class="cal-icon fa p-t-5" text="&#xf073;"></Label>
+        <Label [text]="item.first_air_date | date" class="date-text"></Label>
+      </StackLayout>
+    </GridLayout>
+  </GridLayout>
+
+  <StackLayout width="100%" class="lineBreak anim-likes"></StackLayout>
+
+  <ScrollView class="anim-images" orientation="horizontal">
+    <StackLayout orientation="horizontal" horizontalAlignment="center">
+      <GridLayout
+        *ngFor="let item of genres"
+        rows="auto"
+        columns="*"
+        class="m-10"
+        borderRadius="5"
+        borderColor="#db3e3e"
+        borderWidth="1"
+      >
+        <Label row="0" col="0" class="gen-text p-l-5 p-r-5" [text]="item.name"></Label>
+      </GridLayout>
+    </StackLayout>
+  </ScrollView>
+  <Gridlayout rows="auto,*" class="content anim-content" marginTop="15">
+    <GridLayout row="0" rows="auto" marginBottom="5" columns="auto, auto">
+      <Label col="0" text="&#xf02c;" class="fa overview-icon" textWrap="true"></Label>
+      <Label col="1" class="overview-text" text="Overview" textWrap="true"></Label>
+    </GridLayout>
+
+    <StackLayout row="1">
+      <ScrollView>
+        <StackLayout verticalAlignment="top" horizontalAlignment="left">
+          <label class="overview-value font-weight-bold" [text]="item?.original_title"></label>
+          <Label class="overview-value" textWrap="true" [text]="item.overview"> </Label>
+        </StackLayout>
+      </ScrollView>
+    </StackLayout>
+  </Gridlayout>
+</StackLayout>
+<ActivityIndicator
+  horizontalAlignment="center"
+  verticalAlignment="center"
+  [busy]="processing"
+  class="activity-indicator"
+>
+</ActivityIndicator>

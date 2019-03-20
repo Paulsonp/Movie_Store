@@ -1,0 +1,142 @@
+<ActionBar title="THE MOVIE STORE" class="action-bar"> </ActionBar>
+<GridLayout rows="*,*,*" columns="*,*" class="m-t-25">
+  <!-- backgroundColor="#f54291" -->
+  <CardView
+    width="45%"
+    row="0"
+    elevation="40"
+    class="m-l-10 m-r-10"
+    radius="1"
+    horizontalAlignment="center"
+    verticalAlignment="center"
+  >
+    <StackLayout class="p-10 m-t-30 m-b-30" [nsRouterLink]="['/nowPlaying']">
+      <Image
+        borderRadius="5"
+        height="60"
+        width="60"
+        stretch="aspectFill"
+        class=""
+        src="https://cdn4.iconfinder.com/data/icons/cinema-movie-film/100/film-01-512.png"
+        [nsRouterLink]="['/nowPlaying']"
+      ></Image>
+      <Label text="NOW PLAYING" class="h3 p-t-5 text-center" [nsRouterLink]="['/nowPlaying']"></Label>
+      <Label class=" text-center" text="MOVIES" [nsRouterLink]="['/nowPlaying']"></Label>
+    </StackLayout>
+  </CardView>
+  <CardView
+    width="45%"
+    row="0"
+    col="1"
+    class="m-r-10"
+    elevation="40"
+    radius="1"
+    horizontalAlignment="center"
+    verticalAlignment="center"
+  >
+    <StackLayout class="p-10 m-t-30 m-b-30" [nsRouterLink]="['/upcoming']">
+      <Image
+        borderRadius="5"
+        height="60"
+        width="60"
+        stretch="aspectFill"
+        class=""
+        src="https://www.shareicon.net/data/512x512/2016/01/12/701903_cinema_512x512.png"
+        [nsRouterLink]="['/upcoming']"
+      ></Image>
+      <Label text="UPCOMING" class="h3 p-t-5 text-center" [nsRouterLink]="['/upcoming']"></Label>
+      <Label class="text-center" text="MOVIES" [nsRouterLink]="['/upcoming']"></Label>
+    </StackLayout>
+  </CardView>
+  <CardView
+    width="45%"
+    row="1"
+    elevation="40"
+    class="m-l-10 m-r-10"
+    radius="1"
+    horizontalAlignment="center"
+    verticalAlignment="center"
+  >
+    <StackLayout class="p-10 m-t-30 m-b-30" [nsRouterLink]="['/popular']">
+      <Image
+        borderRadius="5"
+        height="60"
+        width="60"
+        stretch="aspectFill"
+        class=""
+        src="http://www.barsportilfilm.it/wp-content/uploads/2017/03/icon.png"
+        [nsRouterLink]="['/popular']"
+      ></Image>
+      <Label text="POPULAR" class="h3 p-t-5 text-center" [nsRouterLink]="['/popular']"></Label>
+      <Label class=" text-center" text="MOVIES" [nsRouterLink]="['/popular']"></Label>
+    </StackLayout>
+  </CardView>
+  <CardView
+    width="45%"
+    row="1"
+    col="1"
+    class="m-r-10"
+    elevation="40"
+    radius="1"
+    horizontalAlignment="center"
+    verticalAlignment="center"
+  >
+    <StackLayout class="p-10 m-t-30 m-b-30" [nsRouterLink]="['/topRated']">
+      <Image
+        borderRadius="5"
+        height="60"
+        width="60"
+        stretch="aspectFill"
+        class=""
+        [nsRouterLink]="['/topRated']"
+        src="data:image/png;base64,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"
+      ></Image>
+      <Label text="TOP RATED" class="h3 p-t-5 text-center" [nsRouterLink]="['/topRated']"></Label>
+      <Label class=" text-center" text="MOVIES" [nsRouterLink]="['/topRated']"></Label>
+    </StackLayout>
+  </CardView>
+  <CardView
+    width="45%"
+    row="2"
+    elevation="40"
+    class="m-l-10 m-r-10"
+    radius="1"
+    horizontalAlignment="center"
+    verticalAlignment="center"
+  >
+    <StackLayout class="p-10 m-t-30 m-b-30" [nsRouterLink]="['/collection']">
+      <Image
+        borderRadius="5"
+        height="60"
+        width="60"
+        stretch="aspectFill"
+        class=""
+        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/movies-1-965998.png"
+      ></Image>
+      <Label text="MOVIES" class="h3 p-t-5 text-center"></Label>
+    </StackLayout>
+  </CardView>
+  <CardView
+    width="45%"
+    row="2"
+    col="1"
+    class="m-r-10"
+    elevation="40"
+    radius="1"
+    horizontalAlignment="center"
+    verticalAlignment="center"
+  >
+    <StackLayout class="p-10 m-t-30 m-b-30" [nsRouterLink]="['/tvCollection']">
+      <Image
+        borderRadius="5"
+        height="60"
+        width="60"
+        stretch="aspectFill"
+        class=""
+        [nsRouterLink]="['/tvCollection']"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEX///8AAACXl5ednZ0ZGRnv7++Tk5P4+PgJCQn19fUPDw8bGxvPz8/c3NxBQUEwMDCysrIlJSW+vr4qKirh4eHm5ubW1taHh4d8fHzGxsZsbGwgICBMTExycnI1NTWlpaVUVFRkZGRZWVkpsN3YAAAC20lEQVR4nO3d7VLaQBSAYQ4fQQFFq6VoC6j3f5GmmTLTjk2GH+czvM8F7PrOGNhNNsNkAgAAAAAAAAAAAOBC07GbyNhRWB+F9VFY3xUVrprZmDSrL4Xr2+jVlarb9ZfC+SL6j1K1mFNYHYX1UVgfhfVRWB+F9VFYH4X1UVgfhfVRWB+F9VFYH4X1UVgfhUp2z/pjXsilcLEV+bXTHvXSyT0K37pxX2P++10Kb/6MPFtqj3wBj8LluVC235SHvoBvYXs5un/keBeK7J0vR/9CkZPy+MMiCuX4ojzDkJBCkY/vynP0CyoU+eF1tiysUOYPytP0iCsUud8oT/RfkYUi7w7fHLGFIlPzhVx0oTxaX47hhe1C7k55vn8lKBQ5WF6OKQrbfZXylH9JUmi4r8pSKPJmtK/KU9juq0wWcpkKZWWxr0pV2O6r9BdyyQoN9lXpCkUa3csxYaGsVRdyGQvbfZXiDfKchZo3yLMWtvsqpdnzFsqrzuyJC0XneyNzoc63f+ZCndnzFq6U9hppC9X2xEkLFe9rpCzUXNJkLFzp3l/MV9go3yPOVviu/tgtV+HW4FlNqkKTx9+JCo2emaYp/LA6hpKk8NHu7EKOQsvzJxkKbc8QxRcaPz4ML/xpfpYvuFDrdtOA0MKDx8mowMKjz7nosELdW/cDogq190j9Ygr190j9Igot9kj9/AtNHmUPcC90O1d65lxodaRkgEvheeQnz/PdZy7vzDx1494YHu0a4FL48HtY7/csznzeznvZN8Z7pH68YVkfhfVRWB+F9VFYH4X1UVgfhfVRWB+F9VFYH4X1UVjfVRaO/3fXxv/beaNFYX0U1kdhfVdQ2Ixd9OoKAICSNqfYzbv1if+76DVYy/S1ogyBIpbn4vfRcZ2DXeDyGB3XubcrnNxHx3WOhu+HHaLjOnu7wMlzdFzH9AWAXXSdGAe2NrNppJPrO34AAAAAAAAAAADAdfkEQWZGVzACBYEAAAAASUVORK5CYII="
+      ></Image>
+      <Label text="TV SHOWS" class="h3 p-t-5 text-center" [nsRouterLink]="['/tvCollection']"></Label>
+    </StackLayout>
+  </CardView>
+</GridLayout>

@@ -1,0 +1,84 @@
+<ActionBar class="action-bar" backgroundColor="#db3e3e">
+  <GridLayout class="m-r-10" columns="*,30" rows="30" horizontalAlignment="right">
+    <Label row="0" col="0" fontSize="18" class="p-t-5 def-color" text="TV STORE"></Label>
+    <Label fontSize="30" row="0" col="1" class="fa def-color" [nsRouterLink]="['/home']" text="&#xf015;"></Label>
+  </GridLayout>
+</ActionBar>
+
+<GridLayout>
+  <TabView androidTabsPosition="bottom" selectedTabTextColor="red">
+    <StackLayout *tabItem="{ title: 'Today' }">
+      <ListView #listview [items]="items" separatorColor="transparent" class="list-group">
+        <ng-template let-item="item">
+          <StackLayout class="main">
+            <StackLayout class="content">
+              <Image
+                stretch="aspectFill"
+                class="card-img m-t-10"
+                (tap)="showItem(item.id)"
+                [src]="'http://image.tmdb.org/t/p/w185/' + item.poster_path"
+              ></Image>
+              <GridLayout width="100%" columns="auto,*" rows="auto,auto" class="" verticalAlignment="center">
+                <Label
+                  row="0"
+                  col="0"
+                  class="item-name"
+                  textwrap="true"
+                  verticalAlignment="bottom"
+                  horizontalAlignment="left"
+                  [text]="item.name"
+                ></Label>
+                <GridLayout row="1" col="1" rows="auto" columns="auto,auto,auto">
+                  <Label
+                    row="0"
+                    col="0"
+                    class="item-category"
+                    textwrap="true"
+                    verticalAlignment="top"
+                    horizontalAlignment="left"
+                    [text]="item.category"
+                  ></Label>
+                  <Label col="1" row="0" class="fa rating-icon" text="&#xf005;"></Label>
+                  <Label col="2" row="0" class="rating-value item-category" [text]="item.vote_average"></Label>
+                </GridLayout>
+              </GridLayout>
+              <StackLayout width="100%" marginTop="5" class="line"></StackLayout>
+
+              <GridLayout columns="auto,*,auto,auto" rows="auto">
+                <GridLayout col="0" rows="auto" columns="auto,auto">
+                  <Label col="0" row="0" #like class="fa like-icon liked-active" text="&#xf164;"></Label>
+                  <Label col="1" row="0" class="layout" text="item.likes"></Label>
+                </GridLayout>
+                <StackLayout col="1" orientation="horizontal" marginLeft="15">
+                  <Label ref="" class="like-icon layout fa" text="&#xf0e5;"></Label>
+                  <Label class="layout" text="item.comments"></Label>
+                </StackLayout>
+                <GridLayout col="2" rows="auto" columns="auto,auto" marginRight="15">
+                  <Label col="0" row="0" #favorite class="like-icon fa heart-active" text="&#xf004;"></Label>
+                  <Label col="1" row="0" class="layout" text="Favorite"></Label>
+                </GridLayout>
+                <StackLayout col="3" orientation="horizontal">
+                  <Label ref="" class="like-icon layout fa" text="&#xf045;"></Label>
+                  <Label class="layout" text="Share"></Label>
+                </StackLayout>
+              </GridLayout>
+            </StackLayout>
+
+            <StackLayout width="100%" class="lineBreak"></StackLayout>
+          </StackLayout>
+        </ng-template>
+      </ListView>
+    </StackLayout>
+    <StackLayout *tabItem="{ title: 'On Air' }">
+      <Label text="Label in Tab 2"></Label>
+    </StackLayout>
+  </TabView>
+</GridLayout>
+<ActivityIndicator
+  horizontalAlignment="center"
+  verticalAlignment="center"
+  [busy]="processing"
+  class="activity-indicator"
+  color="#db3e3e"
+>
+</ActivityIndicator>
