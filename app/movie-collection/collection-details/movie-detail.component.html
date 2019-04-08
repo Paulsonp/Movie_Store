@@ -6,14 +6,14 @@
       col="0"
       id="player"
       apiKey="AIzaSyDYys0oB55CxYhIt-BRhgTmAXyWyNXlMNU"
-      [src]="videos.key"
+      [src]="videos?.key"
       height="200"
       width="100%"
       backgroundColor="gray"
       isFullScreen="true"
     ></YoutubePlayer>
     <Image
-      *ngIf="!videos.key"
+      *ngIf="!videos?.key"
       row="0"
       col="0"
       height="200"
